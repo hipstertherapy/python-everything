@@ -1,0 +1,21 @@
+file = open("stop-words.txt")
+stopwords = file.readlines()
+
+def testStop(sentence):
+    for word in stopwords:
+        next = word.strip()
+        sentence = sentence.replace(" " + next + " "," ")
+        return sentence
+
+
+while True:
+    input = raw_input("Say something interesting: ")
+    filtered = testStop(input.title())
+    filtered = filtered.replace("my","")
+    filtered = filtered.replace("name","")
+    filtered = filtered.replace("is","")
+    print("halo" + filtered.strip() + "")
+    
+    #sentence = raw_input("really are you okay ?")
+    #sentence = sentence.replace(test, "")
+    # print(sentence)
